@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Portals</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px;
+            background-color: whitesmoke;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 90vh;
+        }
+
+        .side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            color: #333;
+            margin-inline: 10px;
+            border: 2px solid #333;
+        }
+
+        .top-main-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .top-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            border-bottom: #333 2px solid;
+            padding: 20px;
+            width: 100%;
+            height: 200px;
+        }
+
+        div.image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .side img {
+            max-width: 150px;
+        }
+
+        .socials {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .socials a {
+            padding: 10px;
+            border-radius: 5px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .socials .website-btn {
+            border: #333 2px solid;
+            color: #333;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .icons {
+            font-size: 25px;
+        }
+
+        .calltoaction {
+            display: flex;
+            justify-content: space-around;
+            width: 99%;
+            margin-bottom: 10px;
+        }
+
+        .calltoaction a {
+            font-size: 16px;
+            color: #333;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        .problem-btn {
+            flex: .3;
+            border: 2px solid #333;
+            cursor: pointer;
+        }
+
+        .login-btn {
+            flex: .5;
+            border: 2px solid #333;
+        }
+
+        .descriptions {
+            padding: 20px;
+            width: 100%;
+            text-align: justify;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                height: 100%;
+            }
+
+            .side {
+                height: 50vh;
+            }
+
+            .top-container {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+            }
+
+            .socials {
+                flex-direction: column;
+            }
+        }
+
+        /* Modal Style */
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 40%;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .close-btn {
+            float: right;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        .submit-btn {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .calltoaction a:hover {
+            background-color: #0963a7;
+            color: white;
+            border: none;
+        }
+
+        .socials .website-btn:hover {
+            background-color: #0963a7;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="side left">
+            <div class="top-main-container">
+                <div class="top-container">
+                    <div class="image-container">
+                        <img src="logo.png" alt="Rock Builders and Automotive Work Ltd">
+                    </div>
+                    <div class="top-text-container">
+                        <h1>Rock Builders & Automotive</h1>
+                        <p>Expert construction and automotive services.</p>
+                    </div>
+                </div>
+                <div class="socials">
+                    <a class="website-btn" href="https://rockbuilderltd.com/">COMPANY WEBSITE</a>
+                    <a href="#"><ion-icon class="icons" name="call-outline"></ion-icon></a>
+                    <a href="#"><ion-icon class="icons" name="logo-whatsapp"></ion-icon></a>
+                    <a href="#"><ion-icon class="icons" name="logo-instagram"></ion-icon></a>
+                </div>
+            </div>
+            <div class="descriptions">
+                <p>Log in daily to update work records accurately. Do not share your credentials, and if you forget
+                    them, use the 'Report a Problem' button. Always log out after use and report any issues immediately.
+                </p>
+            </div>
+            <div class="calltoaction">
+                <a class="problem-btn" onclick="openModal()">Report a Problem</a>
+                <a class="login-btn" href="#">Enter Portal</a>
+            </div>
+        </div>
+
+        <div class="side right">
+            <div class="top-main-container">
+                <div class="top-container">
+                    <div class="image-container">
+                        <img src="mkzonelogo.png" alt="MK Zone Investment Ltd">
+                    </div>
+                    <div class="top-text-container">
+                        <h1>MK Zone Investment Ltd</h1>
+                        <p>Leading investment solutions for your business growth.</p>
+                    </div>
+                </div>
+                <div class="socials">
+                    <a class="website-btn" href="uc.html">COMPANY WEBSITE</a>
+                    <a href="#"><ion-icon class="icons" name="call-outline"></ion-icon></a>
+                    <a href="#"><ion-icon class="icons" name="logo-whatsapp"></ion-icon></a>
+                    <a href="#"><ion-icon class="icons" name="logo-instagram"></ion-icon></a>
+                </div>
+            </div>
+            <div class="descriptions">
+                <p>Log in daily to update work records accurately. Do not share your credentials, and if you forget
+                    them, use the 'Report a Problem' button. Always log out after use and report any issues immediately.
+                </p>
+            </div>
+            <div class="calltoaction">
+                <a class="problem-btn" onclick="openModal()">Report a Problem</a>
+                <a class="login-btn" href="#">Enter Portal</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="problemModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Report a Problem</h2>
+            <form action="https://formsubmit.co/b7855a3c63d981342a7ff6668d611551" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="text" name="phone" placeholder="Your Phone Number" required>
+                <textarea name="message" placeholder="Describe your problem..." required></textarea>
+                <input type="hidden" name="_subject" value="Rock Builders & Mk Zone | Report a Problem">
+                <input type="hidden" name="_cc" value="rockbuilderltd@gmail.com">
+                <input type="hidden" name="_template" value="table">
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById('problemModal').style.display = 'block'; }
+        function closeModal() { document.getElementById('problemModal').style.display = 'none'; }
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
